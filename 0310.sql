@@ -32,5 +32,9 @@ FROM ANIMAL_INS
 ORDER BY NAME ASC, DATETIME DESC;
 
 -- 상위 n개 레코드
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 1;
 
 -- 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
