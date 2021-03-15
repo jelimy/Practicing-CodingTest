@@ -1,0 +1,34 @@
+-- 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-- 코딩테스트 연습 > SQL > GROUP BY
+-- 고양이와 개는 몇 마리 있을까
+SELECT ANIMAL_TYPE, COUNT(*) count
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE;
+
+-- 동명 동물 수 찾기
+SELECT NAME, COUNT(*) COUNT
+FROM ANIMAL_INS
+WHERE NAME IS NOT NULL
+GROUP BY NAME
+HAVING COUNT(*)>1
+ORDER BY NAME;
+
+-- 입양 시각 구하기(1)
+SELECT HOUR(DATETIME) HOUR, COUNT(*) COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
+GROUP BY HOUR
+ORDER BY HOUR;
+
+-- 입양 시각 구하기(2)
+SET @HOUR:=-1;
+
+SELECT (@HOUR:=@HOUR+1) HOUR,
+        (SELECT COUNT(*)
+        FROM ANIMAL_OUTS
+        WHERE HOUR(DATETIME)=@HOUR) COUNT
+FROM ANIMAL_OUTS
+WHERE @HOUR<23;
+-- 변수값과 같은 HOUR(DATETIME) 값의 개수 >>> NULL값 없이 개수를 세어줄 수 있다.
