@@ -22,3 +22,4 @@ def solution(n, lost, reserve):
             clothes[n] += extra
 
     return clothes.count(1) + clothes.count(2)
+# 오류 발생 원인 : 연속으로 체육복이 없는 경우와 앞뒤로 빌릴 수 있다는 가능성에 대한 대비가 전혀 되어있지 않다.
