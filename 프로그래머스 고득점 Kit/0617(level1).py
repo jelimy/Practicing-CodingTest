@@ -1,6 +1,6 @@
 # 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
-# 코딩테스트 연습 > 연습문제 > 문자열 내 p와 y의 개수
+# 코딩테스트 연습 > 연습문제 > 자연수 뒤집어 배열로 만들기
 # 사용언어 Python3
 
 # 내 답안
