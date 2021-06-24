@@ -25,3 +25,4 @@
 - 0618 level1
 - 0619 level1
 - 0622 level1
+- 0624 level1
