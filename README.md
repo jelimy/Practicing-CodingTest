@@ -27,3 +27,5 @@
 - 0622 level1
 - 0624 level1
 - 0629 level1
+- 0701 level1
+- 0712 level1
