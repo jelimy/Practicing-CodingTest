@@ -22,3 +22,22 @@ def solution(phone_book):
 # 시도 : 문자열이라는 특성을 이용해 sort()로 앞, 뒤의 값만 비교할 수 있도록 했다. 이를 통해 for문의 중첩을 막을 수 있었다.
 
 
+# 코딩테스트 연습 > 해시 > 위장 (level2)
+# 사용언어 Python3
+
+# 나의 답안
+def solution(clothes):
+    dic = {}
+    answer = 1
+
+    for i, c in clothes:
+        if c in dic:
+            dic[c] += 1
+        else:
+            dic[c] = 1
+
+    for j in dic.values():
+        answer *= j + 1
+
+    return answer - 1
+# 처음에 값으로 받아서 value값을 세려고 해서 애를 먹었다. 처음부터 개수로 접근했더니 values()를 사용할 수 있어 더 단순화된 코드를 작성할 수 있었다.
