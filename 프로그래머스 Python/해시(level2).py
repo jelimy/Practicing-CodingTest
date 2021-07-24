@@ -41,3 +41,15 @@ def solution(clothes):
 
     return answer - 1
 # 처음에 값으로 받아서 value값을 세려고 해서 애를 먹었다. 처음부터 개수로 접근했더니 values()를 사용할 수 있어 더 단순화된 코드를 작성할 수 있었다.
+
+# 다른 답안
+from collections import Counter
+from functools import reduce
+
+def solution(clothes):
+    cnt = Counter([c for i, c in clothes])
+    answer = reduce(lambda x, y: x*(y+1), cnt.values(), 1) - 1
+    return answer
+# 라이브러리 사용
+# Counter()로 clothes에 있는 종류들의 개수를 세어줄 수 있다.
+# reduce(function, iterable[, initializer]) : 집계함수에 lambda식을 써서 원하는 값을 얻을 수 있다.
